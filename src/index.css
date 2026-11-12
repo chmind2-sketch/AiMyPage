@@ -1,0 +1,55 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  * {
+    border-color: rgba(255, 255, 255, 0.08);
+  }
+  
+  html {
+    scroll-behavior: smooth;
+    background-color: #0c0d10;
+    color: #e2e4ea;
+    word-break: keep-all;
+    overflow-wrap: break-word;
+  }
+
+  body {
+    background-color: #0c0d10;
+    color: #e2e4ea;
+    min-height: 100vh;
+    overflow-x: hidden;
+  }
+}
+
+/* 은은한 배경 그리드 및 펄스 애니메이션 */
+@keyframes subtle-float {
+  0%, 100% {
+    transform: translateY(0px) scale(1);
+    opacity: 0.18;
+  }
+  50% {
+    transform: translateY(-12px) scale(1.02);
+    opacity: 0.28;
+  }
+}
+
+.animate-subtle-float {
+  animation: subtle-float 12s ease-in-out infinite;
+}
+
+@keyframes subtle-drift {
+  0% {
+    background-position: 0 0;
+  }
+  100% {
+    background-position: 40px 40px;
+  }
+}
+
+.bg-subtle-grid {
+  background-image: radial-gradient(rgba(163, 230, 53, 0.09) 1px, transparent 1px);
+  background-size: 32px 32px;
+  animation: subtle-drift 30s linear infinite;
+}
